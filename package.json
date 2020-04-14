@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "A Custom beautiful eslint formatter.",
   "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.json",
+    "build:watch": "tsc -p tsconfig.json --watch",
     "git:commit": "git-cz",
     "preinstall": "$npm_execpath --silent run checkYarn",
     "checkYarn": "echo \"$npm_execpath\" | grep -q \"yarn\\.js$\" || (echo '⚠️  Use YARN not NPM! ⚠️ ' && echo && exit 1)"
@@ -38,7 +41,8 @@
   "devDependencies": {
     "commitizen": "^4.0.4",
     "cz-conventional-changelog": "3.1.0",
-    "husky": "^4.2.5"
+    "husky": "^4.2.5",
+    "typescript": "^3.8.3"
   },
   "husky": {
     "hooks": {
