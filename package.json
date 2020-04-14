@@ -4,7 +4,7 @@
   "description": "A Custom beautiful eslint formatter.",
   "main": "dist/index.js",
   "scripts": {
-    "commit": "git-cz",
+    "git:commit": "git-cz",
     "preinstall": "$npm_execpath --silent run checkYarn",
     "checkYarn": "echo \"$npm_execpath\" | grep -q \"yarn\\.js$\" || (echo '⚠️  Use YARN not NPM! ⚠️ ' && echo && exit 1)"
   },
@@ -37,7 +37,13 @@
   ],
   "devDependencies": {
     "commitizen": "^4.0.4",
-    "cz-conventional-changelog": "3.1.0"
+    "cz-conventional-changelog": "3.1.0",
+    "husky": "^4.2.5"
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
   },
   "config": {
     "commitizen": {
