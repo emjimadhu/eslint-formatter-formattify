@@ -1,37 +1,47 @@
 {
-    "name": "eslint-formatter-formattify",
-    "version": "1.0.0",
-    "description": "A Custom beautiful eslint formatter.",
-    "main": "dist/index.js",
-    "scripts": {
-      "preinstall": "$npm_execpath --silent run checkYarn",
-      "checkYarn": "echo \"$npm_execpath\" | grep -q \"yarn\\.js$\" || (echo '⚠️  Use YARN not NPM! ⚠️ ' && echo && exit 1)"
-    },
-    "license": "MIT",
-    "keywords": [
-      "eslint",
-      "eslint-formatter",
-      "formatter",
-      "reporter",
-      "lint",
-      "validate",
-      "formattify"
-    ],
-    "author": {
-      "name": "Em Ji Madhu",
-      "email": "emjimadhu@gmail.com"
-    },
-    "engines": {
-      "node": ">=12.0.0",
-      "npm": ">=6.0.0",
-      "yarn": ">=1.21.0"
-    },
-    "homepage": "https://github.com/emjimadhu/eslint-formatter-formattify#readme",
-    "repository": {
-      "type": "git",
-      "url": "git+ssh://git@github.com/emjimadhu/eslint-formatter-formattify.git"
-    },
-    "files": [
-      "dist/**/*"
-    ]
+  "name": "eslint-formatter-formattify",
+  "version": "1.0.0",
+  "description": "A Custom beautiful eslint formatter.",
+  "main": "dist/index.js",
+  "scripts": {
+    "commit": "git-cz",
+    "preinstall": "$npm_execpath --silent run checkYarn",
+    "checkYarn": "echo \"$npm_execpath\" | grep -q \"yarn\\.js$\" || (echo '⚠️  Use YARN not NPM! ⚠️ ' && echo && exit 1)"
+  },
+  "license": "MIT",
+  "keywords": [
+    "eslint",
+    "eslint-formatter",
+    "formatter",
+    "reporter",
+    "lint",
+    "validate",
+    "formattify"
+  ],
+  "author": {
+    "name": "Em Ji Madhu",
+    "email": "emjimadhu@gmail.com"
+  },
+  "engines": {
+    "node": ">=12.0.0",
+    "npm": ">=6.0.0",
+    "yarn": ">=1.21.0"
+  },
+  "homepage": "https://github.com/emjimadhu/eslint-formatter-formattify#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/emjimadhu/eslint-formatter-formattify.git"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "devDependencies": {
+    "commitizen": "^4.0.4",
+    "cz-conventional-changelog": "3.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
+}
