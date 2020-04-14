@@ -3,6 +3,10 @@
     "version": "1.0.0",
     "description": "A Custom beautiful eslint formatter.",
     "main": "dist/index.js",
+    "scripts": {
+      "preinstall": "$npm_execpath --silent run checkYarn",
+      "checkYarn": "echo \"$npm_execpath\" | grep -q \"yarn\\.js$\" || (echo '⚠️  Use YARN not NPM! ⚠️ ' && echo && exit 1)"
+    },
     "license": "MIT",
     "keywords": [
       "eslint",
@@ -31,4 +35,3 @@
       "dist/**/*"
     ]
   }
-  
