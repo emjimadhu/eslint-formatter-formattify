@@ -1,6 +1,6 @@
 {
   "name": "eslint-formatter-formattify",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A Custom beautiful eslint formatter.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -10,6 +10,8 @@
     "lint": "eslint 'src/**/*.ts'",
     "lint:fix": "eslint 'src/**/*.ts' --fix",
     "git:commit": "git-cz",
+    "release": "np --any-branch --no-yarn --no-cleanup",
+    "release:preview": "np --any-branch --no-yarn --no-cleanup --preview",
     "preinstall": "$npm_execpath --silent run checkYarn",
     "checkYarn": "echo \"$npm_execpath\" | grep -q \"yarn\\.js$\" || (echo '⚠️  Use YARN not NPM! ⚠️ ' && echo && exit 1)"
   },
@@ -47,6 +49,7 @@
     "cz-conventional-changelog": "3.1.0",
     "eslint": "^6.8.0",
     "husky": "^4.2.5",
+    "np": "^6.2.1",
     "typescript": "^3.8.3"
   },
   "husky": {
