@@ -1,6 +1,6 @@
 {
   "name": "eslint-formatter-formattify",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A Custom beautiful eslint formatter.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
