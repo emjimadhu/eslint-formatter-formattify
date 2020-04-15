@@ -1,6 +1,9 @@
-import { CLIEngine } from 'eslint';
-import chalk from 'chalk';
 import { relative } from 'path';
+import { CLIEngine } from 'eslint';
+
+import chalk from 'chalk';
+// @ts-ignore
+import mo from 'eslint-formatter-mo';
 
 const formatter = ((results: CLIEngine.LintResult[]): string => {
   let totalErrorCount = 0;
@@ -46,7 +49,7 @@ const formatter = ((results: CLIEngine.LintResult[]): string => {
     );
   } else {
     return (
-      ''
+      `${fixedFilesMessage}${mo(results)}`
     );
   }
 });

@@ -50,6 +50,7 @@
     "commitizen": "^4.0.4",
     "cz-conventional-changelog": "3.1.0",
     "eslint": "^6.8.0",
+    "eslint-formatter-mo": "^1.0.0",
     "husky": "^4.2.5",
     "np": "^6.2.1",
     "typescript": "^3.8.3"
