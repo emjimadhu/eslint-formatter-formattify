@@ -46,11 +46,9 @@
     "@types/eslint": "^6.8.0",
     "@typescript-eslint/eslint-plugin": "^2.28.0",
     "@typescript-eslint/parser": "^2.28.0",
-    "chalk": "^4.0.0",
     "commitizen": "^4.0.4",
     "cz-conventional-changelog": "3.1.0",
     "eslint": "^6.8.0",
-    "eslint-formatter-mo": "^1.0.0",
     "husky": "^4.2.5",
     "np": "^6.2.1",
     "typescript": "^3.8.3"
@@ -67,5 +65,9 @@
   },
   "peerDependencies": {
     "eslint": ">= 6.x"
+  },
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "eslint-formatter-mo": "^1.0.0"
   }
 }
