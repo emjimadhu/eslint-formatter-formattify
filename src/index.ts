@@ -1,5 +1,6 @@
 import { CLIEngine } from 'eslint';
 import chalk from 'chalk';
+import { relative } from 'path';
 
 const formatter = ((results: CLIEngine.LintResult[]): string => {
   let totalErrorCount = 0;
@@ -19,9 +20,29 @@ const formatter = ((results: CLIEngine.LintResult[]): string => {
     totalWarningCount = totalWarningCount + warningCount;
   });
 
+  const hasFixed = results.some((result: CLIEngine.LintResult) => {
+    return result.output;
+  });
+  let fixedFilesMessage = '\n';
+  if (hasFixed) {
+    let fixedFiles = '';
+    results.forEach((result: CLIEngine.LintResult) => {
+      if (result.output) {
+        const outputFileName = relative(process.cwd(), result.filePath);
+        if (fixedFiles.length > 0) {
+          fixedFiles = `${fixedFiles}  ${chalk.blue(outputFileName)}\n`;
+        } else {
+          fixedFiles = `  ${chalk.blue(outputFileName)}\n`;
+        }
+      }
+    });
+
+    fixedFilesMessage = `\nThe following files have been auto-fixed:\n\n${fixedFiles}\n`;
+  }
+
   if (totalErrorCount + totalWarningCount === 0) {
     return (
-      `\n${chalk.bgHex('#2e7d32').white.bold(' DONE ')}: ${chalk.hex('#43a047')('No lint errors found!')}\n`
+      `${fixedFilesMessage}${chalk.bgHex('#2e7d32').white.bold(' DONE ')}: ${chalk.hex('#43a047')(hasFixed ? 'All lint errors auto-fixed.' : 'No lint errors found!')}\n`
     );
   } else {
     return (
