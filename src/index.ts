@@ -1,4 +1,5 @@
 import { CLIEngine } from 'eslint';
+import chalk from 'chalk';
 
 const formatter = ((results: CLIEngine.LintResult[]): string => {
   let totalErrorCount = 0;
@@ -20,7 +21,7 @@ const formatter = ((results: CLIEngine.LintResult[]): string => {
 
   if (totalErrorCount + totalWarningCount === 0) {
     return (
-      'DONE: No lint errors found!\'}\n'
+      `\n${chalk.bgHex('#2e7d32').white.bold(' DONE ')}: ${chalk.hex('#43a047')('No lint errors found!')}\n`
     );
   } else {
     return (
