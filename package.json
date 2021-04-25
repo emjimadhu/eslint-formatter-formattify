@@ -68,6 +68,6 @@
   },
   "dependencies": {
     "chalk": "^4.0.0",
-    "eslint-formatter-mo": "^1.0.0"
+    "eslint-formatter-mo": "^1.0.1"
   }
 }
