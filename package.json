@@ -37,7 +37,7 @@
   "homepage": "https://github.com/emjimadhu/eslint-formatter-formattify#readme",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/emjimadhu/eslint-formatter-formattify.git"
+    "url": "git+https://github.com/emjimadhu/eslint-formatter-formattify.git"
   },
   "files": [
     "dist/**/*"
